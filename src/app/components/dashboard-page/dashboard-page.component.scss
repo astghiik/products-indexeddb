@@ -1,0 +1,21 @@
+.dashboard {
+  &-header {
+    button {
+      background: none;
+
+      svg {
+        height: 19px;
+      }
+    }
+  }
+
+  table {
+    button {
+      background: none;
+
+      svg {
+        height: 15px;
+      }
+    }
+  }
+}

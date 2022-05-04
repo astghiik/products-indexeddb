@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid container">
+    <a class="navbar-brand" href="/">Shop</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dashboard">Dashboard</a>
+        </li>
+      </ul>
+      <form [formGroup]="filtersForm" class="d-flex">
+        <select class="form-select w-auto mx-2" formControlName="vendor">
+          <option value="all" selected>All</option>
+          <option *ngFor="let vendor of vendors" [value]="vendor.id">{{vendor.name}}</option>
+        </select>
+        <select class="form-select w-auto mx-2" formControlName="type">
+          <option value="all" selected>All</option>
+          <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+        </select>
+        <select class="form-select w-auto mx-2" formControlName="color">
+          <option value="all" selected>All</option>
+          <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+        </select>
+        <input class="form-control" type="search" placeholder="Search" formControlName="searchWord">
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container container-fluid py-5">
+  <button *ngIf="!products.length" type="button" class="btn btn-outline-primary" routerLink="dashboard">Add products / vendors</button>
+  <div class="row" *ngIf="products.length">
+    <div class="col-lg-8">
+      <div class="products-container row">
+        <product-card *ngFor="let product of filteredProducts" [product]="product" class="col-lg-4 mb-3"></product-card>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <products-sidebar></products-sidebar>
+    </div>
+  </div>
+</div>

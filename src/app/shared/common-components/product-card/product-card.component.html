@@ -1,0 +1,11 @@
+<div class="card mb-3">
+  <img [src]="product.vendor.logoUrl" class="card-logo" alt="">
+  <img [src]="product.photoUrl" class="card-img-top mt-2" alt="">
+  <div class="card-body">
+    <h5 class="card-title">{{product.name}}</h5>
+    <p class="card-text d-flex align-items-center">
+      <span>{{product.vendor.name}}</span>
+    </p>
+    <p class="card-text text-warning">${{product.price}}</p>
+  </div>
+</div>

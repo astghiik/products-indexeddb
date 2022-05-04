@@ -1,0 +1,7 @@
+<div class="d-inline-block products-sidebar bg-light h-100 p-4 ms-4">
+  <h2 class="mb-3 fs-5">Latest products</h2>
+  <product-card
+    *ngFor="let product of latestProducts"
+    [product]="product"
+  ></product-card>
+</div>

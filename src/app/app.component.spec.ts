@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'products-indexeddb'`, () => {
+  it(`should have as title 'narine-etibaryan-angular-practical-task'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('products-indexeddb');
+    expect(app.title).toEqual('narine-etibaryan-angular-practical-task');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('products-indexeddb app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('narine-etibaryan-angular-practical-task app is running!');
   });
 });

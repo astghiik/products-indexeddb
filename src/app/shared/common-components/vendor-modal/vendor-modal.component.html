@@ -1,0 +1,26 @@
+<div class="modal fade show" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{editingVendorId ? 'Edit' : 'Add'}} vendor</h5>
+        <button type="button" class="btn-close"  (click)="close()"></button>
+      </div>
+      <form [formGroup]="vendorForm" *ngIf="vendorForm" ngNativeValidate>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input required type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label for="logo" class="form-label">Logo URL</label>
+              <input required placeholder="https://..." type="text" class="form-control" id="logo" formControlName="logoUrl">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="close()">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="add()">{{editingVendorId ? 'Edit' : 'Add'}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

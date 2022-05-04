@@ -1,0 +1,68 @@
+<div class="modal fade show" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{editingProductId ? 'Edit' : 'Add'}} product</h5>
+        <button type="button" class="btn-close" (click)="close()"></button>
+      </div>
+      <form [formGroup]="productForm" *ngIf="productForm" ngNativeValidate>
+        <div class="modal-body">
+          <div class="d-flex w-100">
+            <div class="mb-3 me-2 w-75">
+              <label for="name" class="form-label">Name</label>
+              <input required type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div class="mb-3 w-25">
+              <label for="vendor" class="form-label">Vendor</label>
+              <select required class="form-select" id="vendor" formControlName="vendor">
+                <option *ngFor="let vendor of vendors" [value]="vendor.id">{{vendor.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="mb-3 me-2 w-75">
+              <label for="serial-number" class="form-label">Serial Number</label>
+              <input required type="number" class="form-control" min="0" id="serial-number" formControlName="serialNumber">
+            </div>
+            <div class="mb-3 w-25">
+              <label for="type" class="form-label">Type</label>
+              <select required class="form-select" id="type" formControlName="type">
+                <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="mb-3 w-50">
+              <label for="price" class="form-label">Price ($)</label>
+              <input required type="number" class="form-control" min="0" id="price" formControlName="price">
+            </div>
+            <div class="mb-3 mx-2 w-25">
+              <label for="weight" class="form-label">Weight (lb)</label>
+              <input required type="number" class="form-control" min="0" id="weight" formControlName="weight">
+            </div>
+            <div class="mb-3 w-25">
+              <label for="color" class="form-label">Color</label>
+              <select required class="form-select" id="color" formControlName="color">
+                <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="mb-3 me-2 w-50">
+              <label for="photo" class="form-label">Photo URL</label>
+              <input required placeholder="https://..." type="text" class="form-control" id="photo" formControlName="photoUrl">
+            </div>
+            <div class="mb-3 w-50">
+              <label for="release-date" class="form-label">Release date</label>
+              <input required type="date" class="form-control" id="release-date" formControlName="releaseDate">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="close()">Close</button>
+          <button type="submit" class="btn btn-primary" (click)="add()">{{editingProductId ? 'Edit' : 'Add'}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

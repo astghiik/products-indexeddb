@@ -1,16 +1,53 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+import { SharedModule } from "./shared/shared.module";
+import { AppRoutingModule } from "./app-routing.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import HomePageComponent from "./components/home-page/home-page.component";
+import ProductsSidebarComponent from "./components/products-sidebar/products-sidebar.component";
+import {DBConfig, NgxIndexedDBModule} from 'ngx-indexed-db';
+import DashboardPageComponent from "./components/dashboard-page/dashboard-page.component";
+import {ReactiveFormsModule} from "@angular/forms";
+
+const dbConfig: DBConfig  = {
+  name: 'ProductsDB',
+  version: 1,
+  objectStoresMeta: [
+    {
+      store: 'products',
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'name', keypath: 'id', options: { unique: true } },
+      ]
+    },
+    {
+      store: 'vendors',
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'name', keypath: 'name', options: { unique: false } },
+        { name: 'logoUrl', keypath: 'logoUrl', options: { unique: true } },
+      ]
+    }
+  ]
+};
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    ProductsSidebarComponent,
+    DashboardPageComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SharedModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
