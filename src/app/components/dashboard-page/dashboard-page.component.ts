@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { NgxIndexedDBService } from "ngx-indexed-db";
-import * as moment from 'moment';
+import * as moment from "moment";
 
 @Component({
   templateUrl: 'dashboard-page.component.html',

@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
 import { SharedModule } from "./shared/shared.module";
 import { AppRoutingModule } from "./app-routing.module";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { DBConfig, NgxIndexedDBModule } from "ngx-indexed-db";
+import { ReactiveFormsModule } from "@angular/forms";
+import DashboardPageComponent from "./components/dashboard-page/dashboard-page.component";
 import HomePageComponent from "./components/home-page/home-page.component";
 import ProductsSidebarComponent from "./components/products-sidebar/products-sidebar.component";
-import {DBConfig, NgxIndexedDBModule} from 'ngx-indexed-db';
-import DashboardPageComponent from "./components/dashboard-page/dashboard-page.component";
-import {ReactiveFormsModule} from "@angular/forms";
 
 const dbConfig: DBConfig  = {
   name: 'ProductsDB',
@@ -50,4 +50,5 @@ const dbConfig: DBConfig  = {
   providers: [],
   bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { NgxIndexedDBService } from "ngx-indexed-db";
 import { FormBuilder, Validators } from "@angular/forms";
-import { TYPES } from '../../../database/types';
+import { TYPES } from "../../../database/types";
 import { COLORS } from "../../../database/colors";
 
 @Component({

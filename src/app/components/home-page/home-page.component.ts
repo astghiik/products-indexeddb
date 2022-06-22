@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgxIndexedDBService } from "ngx-indexed-db";
 import { TYPES } from "../../database/types";
 import { COLORS } from "../../database/colors";

@@ -17,7 +17,7 @@ export default class VendorModalComponent implements OnInit {
   constructor(
     private dbService: NgxIndexedDBService,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.initForm();

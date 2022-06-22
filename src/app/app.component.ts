@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { NgxIndexedDBService } from "ngx-indexed-db";
 import { PRODUCTS_LIST } from "./database/products";
 import { VENDORS_LIST } from "./database/vendors";
@@ -8,11 +8,9 @@ import { VENDORS_LIST } from "./database/vendors";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'narine-etibaryan-angular-practical-task';
 
-  constructor(private dbService: NgxIndexedDBService){
-  }
+export class AppComponent implements OnInit {
+  constructor(private dbService: NgxIndexedDBService) {}
 
   ngOnInit() {
     // Dummy Data

@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 import HomePageComponent from "./components/home-page/home-page.component";
-import DashboardPageComponent from "./components/dashboard-page/dashboard-page.component"; // CLI imports router
+import DashboardPageComponent from "./components/dashboard-page/dashboard-page.component";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -12,4 +12,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
